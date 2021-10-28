@@ -1,4 +1,22 @@
-var quiz = [
+// variables
+const startButton = document.querySelector('#start-btn')
+const timerEl = document.querySelector('#timer') 
+timerEl.textContent = 0
+
+startButton.addEventListener('click', function(){
+    let timer = 60
+    const timerInterval = setInterval(function(){
+    timer--;
+    timerEl.textContent = timer
+    if(timer === 0){
+        clearInterval(timerInterval)
+    }
+
+    },1000)
+})
+
+// variable containing quiz questions/answers
+const quiz = [
     {
         question: 'Inside which element for we link our JavaScript file?',
         choices: ['<link>', '<script>', '<title>', '<a>'],
