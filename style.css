@@ -1,3 +1,28 @@
+body {
+    font-family: 'Lucida Sans Typewriter', monospace;
+    padding: 1rem;
+    margin: 0;
+    background-color: bisque;
+}
+
+main {
+    border: 1rem solid black;
+    padding: 2rem;
+}
+
+#starter-content {
+    margin-left: auto;
+    margin-right: auto;
+    width: 30rem;
+    height: 10rem;
+}
+
+.quiz-btn {
+    width: 20%;
+    margin-left: 25%;
+    margin-right: 25%
+}
+
 .hide {
     display: none;
 }

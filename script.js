@@ -8,7 +8,8 @@ let timer = 60
 let currentQuestion = 0
 timerEl.textContent = 0
 const submitBtn = document.createElement('button')
-var intials = document.createElement('input')
+var initials = document.createElement('input')
+var userInitialsArr =[]
 
 
 // when start button is clicked, the timer starts its countdown from 60 secs
@@ -44,31 +45,33 @@ startButton.addEventListener('click', function(){
                     // go to next question
                     question.textContent = quiz[currentQuestion].question
                     changeChoices()
-                    // buttonEL.textContent = quiz[currentQuestion].choices[i]
-                    // settimeout to remove class from questionResults
+                    
                     const msgTimer = setTimeout(function(){
                         questionResult.textContent = ''
                     },1000)
             } else {
+                
                 // after last question is clicked, user is able to enter their highscore
                 container.remove()
                 question.remove()
                 const end = document.createElement('h1')
-                end.textContent = 'You have completed the quiz! Please enter your intials to save your highscore.'
+                end.textContent = 'You have completed the quiz! Please enter your initials to save your highscore.'
                 quizContent.append(end)
                 const form = document.createElement('form')
                 quizContent.append(form)
-                intials.setAttribute('type', 'text')
-                intials.setAttribute('name', 'name')
-                intials.setAttribute('placeholder', 'Name or intials')
-                form.append(intials)
-                var userInput = intials.value
+                initials.setAttribute('type', 'text')
+                initials.setAttribute('name', 'name')
+                initials.setAttribute('placeholder', 'Name or initials')
+                form.append(initials)
                 submitBtn.setAttribute('id', 'submit')
                 submitBtn.textContent = 'Submit'
                 form.append(submitBtn)
-                submitBtn.addEventListener('click', function(e, userInput){
+                submitBtn.addEventListener('click', function(e){
                     e.preventDefault()
-                    console.log(userInput)
+                    var userInput = initials.value
+                    userInitialsArr.push(userInput)
+                    console.log(userInitialsArr)
+                    localStorage.setItem("inputs", JSON.stringify(userInitialsArr))
                 })
             }
                 

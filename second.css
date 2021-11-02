@@ -1,0 +1,11 @@
+body {
+    font-family: 'Lucida Sans Typewriter', monospace;
+    padding: 1rem;
+    margin: 0;
+    background-color: bisque;
+}
+
+main {
+    border: 1rem solid black;
+    padding: 1rem;
+}
