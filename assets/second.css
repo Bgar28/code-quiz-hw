@@ -9,3 +9,11 @@ main {
     border: 1rem solid black;
     padding: 1rem;
 }
+
+.highscore{
+    font-size: 24px;
+}
+
+.user {
+    margin-right: 12px;
+}
