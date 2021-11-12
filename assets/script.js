@@ -14,13 +14,13 @@ var userInitialsArr = []
 
 var score = 0
 
+// function that stops the "correct" & "incorrect" msg from displaying
 function clearResultMsg() {
-    // stops the "correct" & "incorrect" msg from displaying
     setTimeout(function () {
         questionResult.textContent = ''
     }, 1000)
 }
-
+// function that adds +1 to the user's score when answer is correct
 function incrementScoreAndDisplayResult(textContent) {
     if (textContent === quiz[currentQuestion].answer) {
         score++;
@@ -30,7 +30,7 @@ function incrementScoreAndDisplayResult(textContent) {
         questionResult.textContent = incorrect
     }
 }
-
+// function that shows at the end of quiz and allows the user to input their intials associated with their highscore
 function renderHighScorePage(initials) {
     const end = document.createElement('h1')
     end.textContent = 'You have completed the quiz! Please enter your initials to save your highscore.'

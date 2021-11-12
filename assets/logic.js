@@ -6,6 +6,7 @@ const group = document.createElement('ul')
 const scoreContainer = document.createElement('div')
 const clearBtn = document.querySelector('#highscores-btn')
 
+// adds each highscore from local storage and appends them to DOM
 parsedScores.forEach(user => {
     const item = document.createElement('li')
     const span1 = document.createElement('span')
@@ -23,6 +24,7 @@ parsedScores.forEach(user => {
 })
 recordEl.append(scoreContainer)
 
+// button clears highscores in local storage and removes it from DOM
 clearBtn.addEventListener('click', function(e){
     e.preventDefault()
     localStorage.clear()
